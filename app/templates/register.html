@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Create account | Secure Auth{% endblock %}
+{% block content %}
+  <section class="card form-card">
+    <p class="eyebrow">Get started</p>
+    <h1>Create account</h1>
+    <form method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <div class="field">
+        {{ form.name.label }}
+        {{ form.name(autocomplete="name", required=true, autofocus=true) }}
+        {% for error in form.name.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+      </div>
+      <div class="field">
+        {{ form.email.label }}
+        {{ form.email(autocomplete="email", required=true) }}
+        {% for error in form.email.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+      </div>
+      <div class="field">
+        {{ form.password.label }}
+        {{ form.password(autocomplete="new-password", required=true, minlength=12, maxlength=128) }}
+        <span class="hint">Use at least 12 characters.</span>
+        {% for error in form.password.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+      </div>
+      <div class="field">
+        {{ form.confirm_password.label }}
+        {{ form.confirm_password(autocomplete="new-password", required=true) }}
+        {% for error in form.confirm_password.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+      </div>
+      {{ form.submit(class_="button full-width") }}
+    </form>
+    <p class="form-footer">Already have an account? <a href="{{ url_for('auth.login') }}">Sign in</a></p>
+  </section>
+{% endblock %}
