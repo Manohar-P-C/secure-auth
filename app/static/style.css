@@ -1,0 +1,159 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", sans-serif;
+  color: #17211d;
+  background: #f3f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(216, 238, 221, .72), transparent 44%),
+    #f3f6f2;
+}
+
+a { color: #17684e; }
+a:hover { color: #104c39; }
+
+.site-header {
+  width: min(100% - 48px, 1080px);
+  height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: #17211d;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.7px;
+  text-decoration: none;
+}
+
+nav { display: flex; align-items: center; gap: 25px; }
+nav a, .nav-button { color: #435149; font-size: 14px; text-decoration: none; }
+.nav-form { margin: 0; }
+.nav-button { padding: 0; border: 0; background: none; cursor: pointer; font-family: inherit; }
+.nav-button:hover { color: #17684e; }
+
+.page {
+  width: min(100% - 32px, 1080px);
+  min-height: calc(100vh - 82px);
+  margin: 0 auto;
+  padding: 60px 0 90px;
+}
+
+.card {
+  margin: 0 auto;
+  border: 1px solid rgba(37, 76, 56, .09);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 24px 70px rgba(30, 55, 39, .08);
+}
+
+.hero {
+  max-width: 740px;
+  padding: 76px 72px 56px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 15px;
+  color: #267657;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.14;
+}
+
+.intro {
+  max-width: 490px;
+  margin: 21px auto 28px;
+  color: #627068;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.actions { display: flex; justify-content: center; gap: 12px; }
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 21px;
+  border: 1px solid #17684e;
+  border-radius: 9px;
+  background: #17684e;
+  color: #fff;
+  cursor: pointer;
+  font: 600 14px "Segoe UI", sans-serif;
+  text-decoration: none;
+  transition: background .15s, transform .15s;
+}
+
+.button:hover { transform: translateY(-1px); background: #10513c; color: #fff; }
+.button.secondary { border-color: #d7e2da; background: #fff; color: #34443a; }
+.button.secondary:hover { background: #f5f8f5; color: #17684e; }
+.note { margin: 38px 0 0; color: #7a867e; font-size: 12px; }
+
+.form-card { max-width: 440px; padding: 42px; }
+.form-card h1, .dashboard-card h1 { font-size: 32px; letter-spacing: -1.2px; }
+.form-card form { margin-top: 28px; }
+.field { display: grid; gap: 7px; margin-bottom: 19px; }
+.field label { color: #34443a; font-size: 13px; font-weight: 600; }
+.field input {
+  width: 100%;
+  height: 45px;
+  padding: 0 12px;
+  border: 1px solid #dce5de;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #17211d;
+  font: 14px "Segoe UI", sans-serif;
+}
+
+.field input:focus { border-color: #419370; box-shadow: 0 0 0 3px rgba(65, 147, 112, .13); }
+.hint, .field-error { font-size: 12px; }
+.hint { color: #77847b; }
+.field-error { color: #a33e36; }
+.full-width { width: 100%; margin-top: 3px; }
+.form-footer { margin: 23px 0 0; color: #647168; font-size: 13px; text-align: center; }
+.messages { max-width: 440px; margin: 0 auto 16px; }
+.message { margin: 0; padding: 12px 15px; border-radius: 8px; font-size: 13px; }
+.message.error { background: #fff0ef; color: #913a34; }
+.message.success { background: #e8f5ed; color: #205a3e; }
+
+.dashboard-card { max-width: 640px; padding: 54px; }
+.dashboard-card .intro { margin-left: 0; }
+.account-detail { display: grid; gap: 6px; padding-top: 20px; border-top: 1px solid #e7ece8; }
+.account-detail span { color: #748078; font-size: 12px; }
+.account-detail strong { font-size: 14px; font-weight: 600; }
+
+@media (max-width: 600px) {
+  .site-header { width: calc(100% - 32px); height: 70px; }
+  nav { gap: 14px; }
+  nav a, .nav-button { font-size: 12px; }
+  .page { padding-top: 34px; }
+  .hero { padding: 55px 24px 38px; }
+  .form-card, .dashboard-card { padding: 32px 24px; }
+  .actions { flex-direction: column; }
+}

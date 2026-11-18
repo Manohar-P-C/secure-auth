@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | Secure Auth{% endblock %}
+{% block content %}
+  <section class="card dashboard-card">
+    <p class="eyebrow">Private area</p>
+    <h1>You're signed in, {{ current_user.name }}.</h1>
+    <p class="intro">This page is available only to authenticated users.</p>
+    <div class="account-detail">
+      <span>Signed in as</span>
+      <strong>{{ current_user.email }}</strong>
+    </div>
+  </section>
+{% endblock %}
